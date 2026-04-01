@@ -47,7 +47,7 @@ public class CategoryServiceImpl implements CategoryService{
 //        category.setCategoryId(id++);
         Category categoryToFind=categoryRepository.findByCategoryName(categoryDto.getCategoryName());
         if(categoryToFind!=null){
-            throw new ApiException("Category with name already exist in DB with as "+category.toString());
+            throw new ApiException("Category with name already exist in DB with as ");
         }
         Category category=modelMapper.map(categoryDto,Category.class);
         Category category1=categoryRepository.save(category);
